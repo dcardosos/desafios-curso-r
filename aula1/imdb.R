@@ -73,4 +73,16 @@ dados |>
  select(-generos_combined)
 
 
+# tentativa do contracenou ------------------------------------------------
 
+dados |> 
+  select(ator_2, ator_1) |> 
+  table() |> 
+  as.data.frame() |> 
+  filter(ator_2 == "Al Pacino", Freq > 0) 
+
+dados |> 
+  select(ator_1, ator_2) |> 
+  table() |> 
+  as.data.frame() |> 
+  filter(ator_2 == "Al Pacino", Freq > 0)
